@@ -2,7 +2,7 @@
 
 # Update songs list
 echo "Updating song list"
-curl -s -S https://raw.githubusercontent.com/helen/swipe-jukebox/master/songs.txt > songs.txt
+curl -s -S https://raw.githubusercontent.com/gpask/swipe-jukebox/master/songs.txt > songs.txt
 
 echo "Jukebox started!"
 

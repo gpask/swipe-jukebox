@@ -18,9 +18,15 @@ while read -ep "Swipe: " INPUT; do
 	# Trim leading zeros so it doesn't think this is octal or whatever
 	ID=$( echo $ID | sed 's/^0*//' )
 
-	# Special case for a toggle card - I hope there are never 1000 plastic cards floating around my house
+	# a card for starting and stopping
 	if [[ "$ID" -eq "999" ]]; then
 		mpc toggle
+		continue
+	fi
+	
+	# a card to clear the entire queue
+	if [[ "$ID" -eq "998" ]]; then
+		mpc clear
 		continue
 	fi
 
@@ -31,5 +37,5 @@ while read -ep "Swipe: " INPUT; do
 		continue
 	fi
 
-	mpc add "$URI" && mpc --wait play 
+	mpc add "$URI" 
 done

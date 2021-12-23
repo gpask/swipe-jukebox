@@ -37,5 +37,5 @@ while read -ep "Swipe: " INPUT; do
 		continue
 	fi
 
-	mpc add "$URI" && mpc -q play
+	mpc add "$URI"
 done

@@ -24,9 +24,9 @@ while read -ep "Swipe: " INPUT; do
 		continue
 	fi
 	
-	# a card to clear the entire queue
+	# a card to clear the entire queue except for the current song
 	if [[ "$ID" -eq "998" ]]; then
-		mpc clear
+		mpc crop
 		continue
 	fi
 

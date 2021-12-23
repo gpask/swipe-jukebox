@@ -24,9 +24,9 @@ while read -ep "Swipe: " INPUT; do
 		continue
 	fi
 	
-	# a card to clear the entire queue except for the current song
+	# a card to clear the entire queue
 	if [[ "$ID" -eq "998" ]]; then
-		mpc crop
+		mpc clear
 		continue
 	fi
 
@@ -37,5 +37,5 @@ while read -ep "Swipe: " INPUT; do
 		continue
 	fi
 
-	mpc add "$URI" 
+	mpc add "$URI" && mpc -q play
 done

@@ -44,8 +44,8 @@ while read -ep "Swipe: " INPUT; do
 
 	# If there's only one thing in the queue, that means it was just added so start playing.
 	# Otherwise it will restart the currently playing track instead of continuing on with the playlist.
-	if [[ "$COUNT" -eq 1 ]]
+	if [[ "$COUNT" -eq 1 ]]; then
 		mpc play
+		continue
 	fi
-	
 	done

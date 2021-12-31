@@ -36,9 +36,9 @@ while read -ep "Swipe: " INPUT; do
 	if [[ -z "$URI" ]]; then
 		continue
 	fi
+	# Add swipe to queue
+		mpc add "$URI"
 
-	mpc add "$URI"
-	
 	# How many things are in the queue?
 	COUNT=$( mpc playlist | wc -l )
 
@@ -47,4 +47,5 @@ while read -ep "Swipe: " INPUT; do
 	if [[ "$COUNT" -eq 1 ]]
 		mpc play
 	fi
-done
+	
+	done

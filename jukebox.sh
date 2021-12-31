@@ -38,4 +38,13 @@ while read -ep "Swipe: " INPUT; do
 	fi
 
 	mpc add "$URI"
+	
+	# How many things are in the queue?
+	COUNT=$( mpc playlist | wc -l )
+
+	# If there's only one thing in the queue, that means it was just added so start playing.
+	# Otherwise it will restart the currently playing track instead of continuing on with the playlist.
+	if [[ "$COUNT" -eq 1 ]]
+		mpc play
+	fi
 done
